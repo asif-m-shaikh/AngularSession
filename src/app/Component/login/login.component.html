@@ -1,0 +1,23 @@
+<form [formGroup]="profileForm" (ngSubmit)="submit()">
+    <div>
+        <label>
+            {{username|commonPipe}}:
+            <input type="text" formControlName="username" required>
+
+            <div
+                *ngIf="profileForm.controls['username'].hasError('required') && profileForm.controls['username'].touched">
+                Please enter username</div>
+            <div *ngIf="profileForm.controls['username'].hasError('maxlength')">
+                Please enter at most 2 character</div>
+
+        </label>
+    </div>
+    <label>
+        Password:
+        <input type="text" formControlName="password">
+    </label>
+    
+    <button>Submit</button>
+    <br>
+    <label>{{gender|gender:'demo'}}</label>
+</form>
