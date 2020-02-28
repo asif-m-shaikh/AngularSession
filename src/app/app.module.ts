@@ -12,7 +12,7 @@ import { MatPaginatorModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonPipePipe } from './Component/customePipes/common-pipe.pipe';
 import { GenderPipe } from './Component/customePipes/gender.pipe';
-
+import { CookieService } from 'ngx-cookie-service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +30,7 @@ import { GenderPipe } from './Component/customePipes/gender.pipe';
     MatPaginatorModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
